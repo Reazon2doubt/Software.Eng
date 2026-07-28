@@ -1,10 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Hub</title>
+    styles.css
+</head>
 <body>
 
-<h1>My First Heading</h1>
+<header>
+    <h1>Introduction to Web Development</h1>
+    <p>Lesson Hub</p>
+</header>
 
-<p>My first paragraph.</p>
+<nav>
+    <overview
+    comes">Learning Outcomes</a>
+    ">Activities</a>
+    #resourcesResources</a>
+    #assessment
+</nav>
+
+<main>
+
+    <!-- LESSON OVERVIEW -->
+    <section id="overview" class="card">
+        <h2>Lesson Overview</h2>
+
+        <div class="lesson-meta">
+            <div>
+                <strong>Duration:</strong> 90 Minutes
+            </div>
+            <div>
+                <strong>Level:</strong> Level 3
+            </div>
+            <div>
+                <strong>Topic:</strong> HTML Fundamentals
+            </div>
+        </div>
+
+        <p>
+            This lesson introduces learners to HTML structure,
+            semantic elements, and webpage construction.
+        </p>
+    </section>
+
+    <!-- LEARNING OUTCOMES -->
+    <section id="outcomes" class="card">
+        <h2>Learning Outcomes</h2>
+
+        <ul>
+            <li>Create a basic HTML document.</li>
+            <li>Use headings, paragraphs and images.</li>
+            <li>Apply semantic HTML elements.</li>
+            <li>Validate and test webpage structure.</li>
+        </ul>
+    </section>
+
+    <!-- LESSON PLAN -->
+    <section id="activities" class="card">
+        <h2>Lesson Activities</h2>
+
+        <div class="timeline">
+
+            <div class="activity">
+                <div class="time">10 mins</div>
+                <div class="content">
+                    <h3>Starter Activity</h3>
+                    <p>Review existing knowledge using questioning.</p>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="time">20 mins</div>
+                <div class="content">
+                    <h3>Demonstration</h3>
+                    <p>Introduce HTML document structure.</p>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="time">40 mins</div>
+                <div class="content">
+                    <h3>Practical Task</h3>
+                    <p>Create a personal homepage using HTML.</p>
+                </div>
+            </div>
+
+            <div class="activity">
+                <div class="time">20 mins</div>
+                <div class="content">
+                    <h3>Review & Assessment</h3>
+                    <p>Complete formative assessment quiz.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="card">
+        <h2>Lesson Resources</h2>
+
+        <div class="resource-grid">
+
+            <a href="#" classesource-card">
+                📝 Worksheet
+            </a>
+
+            # class="resource-card">
+                💻 Example Code
+            </a>
+
+            #>
+
+        </div>
+    </section>
+
+    <!-- FORMATIVE ASSESSMENT -->
+    <section id="assessment" class="card">
+        <h2>Formative Assessment</h2>
+
+        <div id="quiz">
+
+            <div class="question">
+                <h3>1. What does HTML stand for?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    HyperText Markup Language
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    Hyper Transfer Machine Logic
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    High Text Management Language
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>2. Which HTML element defines the largest heading?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    &lt;h1&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    &lt;heading&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    &lt;title&gt;
+                </label>
+            </div>
+
+            <button id="submitBtn">
+                Submit Assessment
+            </button>
+
+            <div id="results"></div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Lesson Hub Template</p>
+</footer>
+
+script.js
 
 </body>
 </html>
