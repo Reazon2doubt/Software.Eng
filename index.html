@@ -3,180 +3,546 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson Hub</title>
-    styles.css
+    <title>Python Quickfire</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
 
-<header>
-    <h1>Introduction to Web Development</h1>
-    <p>Lesson Hub</p>
+<header class="hero">
+    <div class="container">
+        <h1>Python Quickfire Series</h1>
+        <p>Behavioural Patterns: <b>The Visitor Pattern</b></p>
+    </div>
+    
+    <!-- QR Code Button -->
+    <div id="qr-container">
+        <img src="Access.png" alt="Access this resource!" id="qr-code">
+    </div>
+
+<div id="qr-overlay"></div>
 </header>
 
-<nav>
-    <overview
-    comes">Learning Outcomes</a>
-    ">Activities</a>
-    #resourcesResources</a>
-    #assessment
+<nav class="navbar">
+
+    <ul class="nav-menu">
+
+        <li>
+            <a href="#learning plan">Learning Plan</a>
+        </li>
+
+    </ul>
+
 </nav>
 
-<main>
+<main class="container">
 
-    <!-- LESSON OVERVIEW -->
-    <section id="overview" class="card">
-        <h2>Lesson Overview</h2>
+        <section id="outcomes" class="card">
+        <h2>Prerequisites Knowledge</h2>
 
-        <div class="lesson-meta">
-            <div>
-                <strong>Duration:</strong> 90 Minutes
-            </div>
-            <div>
-                <strong>Level:</strong> Level 3
-            </div>
-            <div>
-                <strong>Topic:</strong> HTML Fundamentals
-            </div>
-        </div>
+       <p>The prerequisite Python knowledge and practice for this micro-learning activity is as follows:</p>
+        </br>
+       <ul>
+            <li>Classes and objects</li>
+            <li>Encapsulation</li>
+            <li>Inheritance</li>
+            <li>Polymorphism</li>
+            <li>Method overriding</li>
+            <li>Abstract classes and interfaces</li>
+        </ul>
 
-        <p>
-            This lesson introduces learners to HTML structure,
-            semantic elements, and webpage construction.
-        </p>
     </section>
 
-    <!-- LEARNING OUTCOMES -->
-    <section id="outcomes" class="card">
-        <h2>Learning Outcomes</h2>
+    <section id="overview" class="card">
+        <h2 id="learning-plan">Learning Overview</h2>
 
+        <div class="lesson-meta">
+            <span><strong>Duration:</strong> 25 minutes</span>
+            <span><strong>Level:</strong> FHEQ 5</span>
+            <span><strong>Topic:</strong> The Visitor Design Pattern</span>
+        </div>
+
+        <p>This session introduces Computer Science students to the Visitor Design Pattern centred on a London Museum collections management scenario, followed by a diagnostic workthrough and reflective discussion.
+            The workshop is followed by formative exercises.
+        </p> 
+    </section>
+
+    <section id="outcomes" class="card">
+        <h2>Learning Outcomes:</h2>
+        <p>By the end of this learning activity, you should be able to:</p>
         <ul>
-            <li>Create a basic HTML document.</li>
-            <li>Use headings, paragraphs and images.</li>
-            <li>Apply semantic HTML elements.</li>
-            <li>Validate and test webpage structure.</li>
+            <li><b>Workshop:</b> Explain why the Visitor pattern is useful.</li>
+            <li><b>Workshop:</b> Implement a simplified visitor pattern for a given class.</li>
+            <li><b>Seminar:</b> Design and implement object-oriented Python solutions and the Visitor Pattern to address a range of software development problems.</li>
+            <li><b>Seminar:</b> Evaluate the maintainability and extensibility of alternative object-oriented designs, justifying when the Visitor Pattern is an appropriate solution to evolving software requirements.</li>
         </ul>
     </section>
 
-    <!-- LESSON PLAN -->
     <section id="activities" class="card">
-        <h2>Lesson Activities</h2>
+        <h2>Activities</h2>
 
-        <div class="timeline">
+        <div class="activity">
+            <div class="time">4 mins</div>
+            <div>
+                <h3>Starter Activity: Scenario based problem</h3>
+                <p>Imagine you've just joined a software consultancy in London. One of your first clients is the <a href="https://www.britishmuseum.org/">British Museum (Bloomsbury area, London)</a>, around 3.5 miles from Northeastern University London.
+                    The museum is investing heavily in digital experiences and has thousands of assets including:
 
-            <div class="activity">
-                <div class="time">10 mins</div>
-                <div class="content">
-                    <h3>Starter Activity</h3>
-                    <p>Review existing knowledge using questioning.</p>
-                </div>
+                    <ul style="padding-left: 1.5rem";>
+                        <li>Historical artefacts</li>
+                        <li>Paintings</li>
+                        <li>Interactive digital exhibits</li>
+                        <li>Roman archaeology collections</li>
+                    </ul>
+
+                    The software team has built an application to manage and analyse these collections.</p>
+                    <div class="row">
+                        <div class="column">
+                            <img src="img/Brit_Museum.jpeg" alt="The British Museum, image 1" style="width:100%">
+                        </div>
+                        <div class="column">
+                            <img src="img/Brit_Museum2.jpeg" alt="The British Museum, image 2" style="width:100%">
+                        </div>
+                        <div class="column">
+                            <img src="img/Brit_Museum3.jpeg" alt="The British Museum, image 3" style="width:100%">
+                        </div>
+                        </div>
+                    </br>
             </div>
+        </div>
 
-            <div class="activity">
-                <div class="time">20 mins</div>
-                <div class="content">
-                    <h3>Demonstration</h3>
-                    <p>Introduce HTML document structure.</p>
-                </div>
+        <div class="activity">
+            <div class="time"></div>
+            <div>
+                <h3>Initial Discussion</h3>
+                <p>In pairs, discuss the programmatic structure you could use to represent each element of the scenario.</p>
+
+                    <p><ul style="padding-left: 1.5rem";>
+
+                        <li>Management wants:</li>
+                        <li>Ticket reporting</li>
+                        <li>Insurance valuation</li>
+                        <li>Accessibility auditing</li>
+
+                    </ul></p>
+                </br>
+                    <i>Where would you put the code for each of these activities?</i></br>
+
+                    <i>What happens when management wants another activity next month?</i>
+                </p>
+                </p>
             </div>
+        </div>
 
-            <div class="activity">
-                <div class="time">40 mins</div>
-                <div class="content">
-                    <h3>Practical Task</h3>
-                    <p>Create a personal homepage using HTML.</p>
-                </div>
+        <div class="activity">
+            <div class="time">3 mins</div>
+            <div>
+                <h3>Micro-Task (Experience the problem yourself!)</h3>
+                <p>In pairs, complete the below:</p></br>
+
+                <ol style="padding-left: 1.5rem";>
+               <li>The London Museum wants to calculate the annual insurance value of its exhibits.</li>
+                    <ul style="padding-left: 1.5rem";><li>Implement the insurance calculation</li></ul>
+                
+                <li>The museum's accessibility team now wants an accessibility score for every exhibit.</li>
+                <li>The sustainability team wants a carbon footprint score.</li>
+                <li>The insurance policy has changed. The values need updating.</li>
+                </ol>
+            </br>
+                <i>How many classes are we modifying?</i>
+                </p>
             </div>
+        </div>
 
-            <div class="activity">
-                <div class="time">20 mins</div>
-                <div class="content">
-                    <h3>Review & Assessment</h3>
-                    <p>Complete formative assessment quiz.</p>
+        <div class="activity">
+            <div class="time">8 mins</div>
+            <div>
+                <h3>The Visitor Pattern: Overview</h3>
+                <p>The visitor pattern is a behavioral design pattern that separates an algorithm from the object structure it operates on, enabling the addition of new operations to existing classes without modifying their code. It achieves this via double dispatch, allowing the executed method to depend on both the visitor type and the element type.</p>
+                <ul style="padding-left: 1.5rem";>
+                    <li>Reflection: Problems it helps to overcome</li>    
+                    <li>When is it acceptable to <b><i>not</i></b> use the visitor pattern?</li>
+                    <li>VS Code Demo</li>
+                </ul>
                 </div>
-            </div>
+        </div>
 
+        <div class="activity">
+            <div class="time">7 mins</div>
+            <div>
+                <h3>Experimentation! (Work through a problem!)</h3>
+                <p>In pairs, work through the provided worksheet to implement <i>(pseudocode)</i> a new accessibility requirement, and further extension questions.</p>
+            </div>
+        </div>
+
+        <div class="activity">
+            <div class="time">3 mins</div>
+            <div>
+                <h3>Reflection (on the learning!)</h3>
+                <p>Reflection on uses of the visitor pattern.
+            </div>
         </div>
     </section>
 
-    <!-- RESOURCES -->
     <section id="resources" class="card">
+
         <h2>Lesson Resources</h2>
 
-        <div class="resource-grid">
+        <p>Download the lesson resources below:</p>
 
-            <a href="#" classesource-card">
-                📝 Worksheet
-            </a>
+        <div class="resources">
 
-            # class="resource-card">
-                💻 Example Code
-            </a>
+            Session materials (PDF) (PPT)
+            <br/></a>
 
-            #>
+            Student Worksheets (PDF) (docx)
+            <br/></a>
 
-        </div>
+            Example Python Code (ZIP)
+            <br/></a>
+
+            Formative Exercises (ZIP)
+            <br/></a>
     </section>
 
-    <!-- FORMATIVE ASSESSMENT -->
+
+        <section id="resources" class="card">
+
+            <h2>Video Recap</h2>
+
+            <p>EMBED VIDEO HERE</p>
+
+        </section>
+
+
+
     <section id="assessment" class="card">
-        <h2>Formative Assessment</h2>
+        <h2>Formative Exercises</h2>
+        <p>The following challenges present a series of scenarios, designed to test your knowledge, understanding, problem-solving, 
+        and interpretation of the Visitor Pattern, as a behavioural design pattern that can be implemented in Python.</br></br>
+        Complete the warm-up challenge, and then work your way through to the advanced challenge, with further extensions available as part of the expert challenge.</br></br>
+        <strong>All students are expected to complete to the end of the <u>advanced challenge</u> section.</strong></br></br>
+        Submission of code and other associated material is available through <strong>Canvas</strong>.
+        </p>
 
-        <div id="quiz">
+<div class="accordion">
 
-            <div class="question">
-                <h3>1. What does HTML stand for?</h3>
+    <button class="accordion-btn">
+        🟢 Warm up Challenge
+    </button>
 
-                <label>
-                    <input type="radio" name="q1" value="a">
-                    HyperText Markup Language
-                </label>
+    <div class="accordion-content">
+        <img src="img/kingdom.webp" alt="Legends of Eldoria" class="kingdom-image"width="250" height="300">
+    </br>
+        <p>You are part of a game development team creating Legends of Eldoria, a fantasy role-playing game set in a medieval kingdom filled with heroes, magic and adventure.
 
-                <label>
-                    <input type="radio" name="q1" value="b">
-                    Hyper Transfer Machine Logic
-                </label>
+        Players can recruit different character types into their party. Each character has unique strengths and abilities that make them valuable during battles, quests and tournaments.
 
-                <label>
-                    <input type="radio" name="q1" value="c">
-                    High Text Management Language
-                </label>
-            </div>
+        Your development team has created several character classes, each representing a different type of hero that players can encounter throughout the game.
 
-            <div class="question">
-                <h3>2. Which HTML element defines the largest heading?</h3>
+        The game currently contains the following playable characters.
+        </p></br>
+        <p><strong>1. Sir Cedric the Knight:</strong></br>
+        Sir Cedric is a heavily armoured warrior who protects allies and excels in close combat. Knights in the game are designed to withstand significant damage whilst dealing powerful physical attacks.
+        Sir Cedric has the following properties:</p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;">
+        <span></span>Name: Sir Cedric
+        Health: <span style="color: #00D; font-weight: bold">100</span>
+        Strength: <span style="color: #00D; font-weight: bold">85</span>
+        Armour: <span style="color: #00D; font-weight: bold">90</span>
+        Years of Service: <span style="color: #00D; font-weight: bold">12</span>
+        </pre></div>
 
-                <label>
-                    <input type="radio" name="q2" value="a">
-                    &lt;h1&gt;
-                </label>
+        <p>These properties help determine how effective a Knight is during battles, defensive missions and kingdom wars.</p>
+        </br>
 
-                <label>
-                    <input type="radio" name="q2" value="b">
-                    &lt;heading&gt;
-                </label>
+        <p><strong>2. Robin Oakwood the Archer:</strong></br>
+        Robin is a skilled ranger capable of attacking enemies from long distances. Archers rely on precision and agility rather than armour.
+        Robin has the following properties:</p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;">
+        Name: Robin Oakwood
+        Health: <span style="color: #00D; font-weight: bold">80</span>
+        Accuracy: <span style="color: #00D; font-weight: bold">95</span>
+        Agility: <span style="color: #00D; font-weight: bold">90</span>
+        Attack Range: <span style="color: #00D; font-weight: bold">75</span>
+        </pre></div>
+        <p>These attributes influence hit probability, movement speed and ranged damage calculations.</p></br>
 
-                <label>
-                    <input type="radio" name="q2" value="c">
-                    &lt;title&gt;
-                </label>
-            </div>
+        <p><strong>3. Merlin the Wise:</strong></br>
+        Merlin is one of the kingdom's most powerful spellcasters. Wizards use magical abilities rather than physical strength to overcome challenges.
+        Merlin possesses:</p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;">
+        Name: Merlin the Wise
+        Health: <span style="color: #00D; font-weight: bold">60</span>
+        Mana: <span style="color: #00D; font-weight: bold">120</span>
+        Intelligence: <span style="color: #00D; font-weight: bold">100</span>
+        Spell Power: <span style="color: #00D; font-weight: bold">95</span>
+        </pre></div>
 
-            <button id="submitBtn">
-                Submit Assessment
-            </button>
+        <p>These values affect spell effectiveness, mana consumption and magical combat performance.</p></br>
 
-            <div id="results"></div>
+        <p><strong>4. Sister Elara the Healer:</strong></br>
+        Sister Elara accompanies adventuring parties, restoring health and supporting allies through healing magic.
+        She has the following properties:
+        </p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;">
+        Name: Sister Elara
+        Health: <span style="color: #00D; font-weight: bold">70</span>
+        Faith: <span style="color: #00D; font-weight: bold">90</span>
+        Healing Power: <span style="color: #00D; font-weight: bold">95</span>
+        Compassion: <span style="color: #00D; font-weight: bold">100</span>
+        </pre></div>
 
+        <p>These values affect spell effectiveness, mana consumption and magical combat performance.</p></br>
+
+        <p><strong>5. Shadow Fox the Rogue:</strong></br>
+        Shadow Fox is a stealth specialist who excels at infiltration, treasure hunting and surprise attacks.
+        The Rogue possesses:
+        </p>
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%;">
+        Name: Shadow Fox
+        Health: <span style="color: #00D; font-weight: bold">75</span>
+        Stealth: <span style="color: #00D; font-weight: bold">95</span>
+        Dexterity: <span style="color: #00D; font-weight: bold">90</span>
+        Lockpicking Skill: <span style="color: #00D; font-weight: bold">85</span>
+        </pre></div>
+
+        <p>These statistics influence sneaking, critical hit chances and the ability to unlock hidden areas within the game.</p></br>
+
+        <div style="background-color: #FFF9E3;">
+            <h3>Your Task:</h3>
+            <p><strong>1.</strong> Construct an appropriate class structure that allows each character to be represented, and instantiated as an object in a main method.</p></br>
+            <p><strong>2.</strong> Ensure each character has a suitable <i>to-string</i> method for ease of printing to the terminal</p></br>
+            <p><strong>3.</strong> Ensure each class is well documented with appropriate use of doc-strings.</p></br>
+            <p><strong>4.</strong> Add a Unique Special Ability for each class. For example; 'shield wall', 'rapid shot', 'cast spell', etc... these abilities need only return a string. 
+            </br >E.g., <code>"Sir Cedric raises a shield wall!"</code></p></br>
+            <p><strong>5.</strong> The game designers would like a Battle Rating score for every character. Implement a <code>calculate_battle_rating()</code> method, as below:</p>
+            <ul style="padding-left: 1.5rem">
+                <li><strong>Knight:</strong> Strength * 0.5 + Armour * 0.3 + Experience (Years of Service) * 2</li>
+                <li><strong>Archer:</strong> Accuracy * 0.4 + Agility * 0.4 + Attack Range * 0.2</li>
+                <li><strong>Wizard:</strong> Intelligence * 0.4 + Spell Power * 0.4 + Mana * 0.2</li>
+                <li><strong>Healer:</strong> healing Power * 0.5 + Faith * 0.3 + Compassion * 0.2</li>
+                <li><strong>Rogue:</strong> Stealth * 0.4 + dexterity * 0.4 + Lockpicking Skill * 0.2</li>
+            </ul>
+            </br>
+            <p><strong>6.</strong> Reflective Questions:</p>
+            <ul style="padding-left: 1.5rem">
+                <li> Why did we choose to represent each hero as a class rather than using a list of dictionaries? </li>
+                <li> Which attributes are common across all characters?</li>
+                <li>Could a parent class named Character reduce code duplication? Explain your reasoning.</li>
+                <li>If the game developers wanted a "Battle Rating" feature for every character, where would you add that functionality? Explain your reasoning.</li>
+            </ul>
         </div>
+    </div>
+
+    </div>
+
+            </br><button class="accordion-btn">
+        🟠 Advanced Challenge
+    </button>
+    <div class="accordion-content">
+
+<div class="accordion-content">
+    <p>
+        The development team behind <strong>Legends of Eldoria</strong> has released the game and it has become an enormous success.
+        Unfortunately, every few weeks the game designers request a new scoring system for all characters.
+        The team has already implemented a <code>BattleRatingVisitor</code>, but now additional gameplay systems are being introduced.
+    </p>
+
+    <div style="background-color: #FFF9E3; padding: 10px;">
+        <h3>1. Implement a Tournament Visitor</h3>
+        <p>The Esports Team would like a <strong>Tournament Score</strong> for every character.</p>
+        <p>Create a new visitor called:</p>
+        <code>TournamentVisitor</code></br></br>
+
+        <p>Assign the following scores:</p>
+
+        <pre>
+        Knight   = 75
+        Archer   = 90
+        Wizard   = 85
+        Healer   = 60
+        Rogue    = 95
+        </pre>
+
+        <p>
+            Implement the required visitor methods and test them against your character classes.
+        </p>
+
+    </div>
+
+    <br>
+
+    <div style="background-color: #FFF9E3; padding: 10px;">
+
+        <h3>2: Implement a Magic Affinity Visitor</h3>
+        <p>The game balancing team now requires a new system that measures each character's magical potential.</p>
+
+        <p>Create:</p>
+
+        <pre>MagicAffinityVisitor</pre></br>
+        <p>Design your own scoring system between 0 and 100.</p>
+        <p>Consider:</p>
+
+        <ul style="padding-left: 1.5rem">
+            <li>Wizards should score highly.</li>
+            <li>Healers should score reasonably well.</li>
+            <li>Knights and Rogues may have lower magical ability.</li>
+        </ul>
+
+    </div>
+
+    <br>
+
+    <div style="background-color: #FFF9E3; padding: 10px;">
+
+        <h3>3: Character Analysis</h3>
+        <p>Using both visitors, determine:</p>
+
+        <ul style="padding-left: 1.5rem">
+            <li>Which character has the highest Tournament Score?</li>
+            <li>Which character has the highest Magic Affinity?</li>
+            <li>Which character performs best overall?</li>
+        </ul>
+
+        <br><p>Display your results in the terminal.</p>
+
+    </div>
+
+    <br>
+
+    <div style="background-color: #FFF9E3; padding: 10px;">
+
+        <h3>4: Compare Approaches</h3>
+
+        <p>Before implementing visitors, you added functionality directly into the character classes.</p>
+
+        <p>Consider the following new requirements:</p>
+
+        <ul style="padding-left: 1.5rem">
+            <li>Battle Rating</li>
+            <li>Tournament Score</li>
+            <li>Magic Affinity</li>
+            <li>Quest Reward Rating</li>
+            <li>Legendary Hero Score</li>
+        </ul><br>
+
+        <p>
+            Consider the following questions:
+        </p>
+
+        <ul style="padding-left: 1.5rem">
+            <li>How many character classes would need to change?</li>
+            <li>Would the character classes become larger over time?</li>
+            <li>Which approach is easier to maintain?</li>
+        </ul>
+
+    </div>
+
+    <br>
+
+    <div style="background-color: #FFF9E3; padding: 10px;">
+
+        <h3>5: Software Engineering Reflection</h3>
+
+        <p>Complete the following questions:</p>
+
+        <ol style="padding-left: 1.5rem">
+            <li>What problem does the Visitor Pattern solve in Legends of Eldoria?</li>
+            <li>What part of the game remains relatively stable?</li>
+            <li>What part of the game changes frequently?</li>
+            <li>How does the Visitor Pattern support maintainability?</li>
+            <li>How does it support the Open/Closed Principle?</li>
+        </ol>
+
+    </div>
+
+    <br>
+
+        <div style="background-color: #FFF9E3; padding: 10px;">
+        <h3>Stretch Challenge <i>(Optional)</i></h3>
+
+        <p>The game designers introduce a brand new character type:</p>
+        <pre>Dragon Rider</pre><br>
+        <p>The Dragon Rider contains:</p>
+
+        <pre>
+        Health
+        Dragon Strength
+        Flying Speed
+        Combat Experience
+        </pre>
+
+        <p> With another student, discuss:</p>
+
+        <ul  style="padding-left: 1.5rem">
+            <li>What changes would be required to your Visitors?</li>
+            <li>Would the Visitor Pattern still be a good choice?</li>
+            <li>What limitation of the Visitor Pattern does this demonstrate?</li>
+        </ul>
+    </div>
+    </div>
+    </div>
+
+    <br><button class="accordion-btn">
+        🔴 Expert Challenge
+    </button>
+    <div class="accordion-content">
+<div style="background-color: #FFE6E6; padding: 10px;">
+
+    <h3>Expert Challenge 1: Dynamic Character Ranking System</h3>
+    <p>The game directors want to introduce a global player leaderboard that combines
+    multiple scoring systems.</p>
+    <p>Create a new visitor:</p>
+
+    <pre>CharacterRankingVisitor</pre>
+
+    <p>This visitor should calculate an overall ranking score using:</p>
+
+    <ul style="padding-left: 1.5rem">
+        <li>Battle Rating</li>
+        <li>Tournament Score</li>
+        <li>Magic Affinity</li>
+    </ul><br>
+
+    <p>You may decide how these scores are weighted.For example:</p>
+
+    <pre>
+    Final Score =
+    (0.5 * Battle Rating) +
+    (0.3 * Tournament Score) +
+    (0.2 * Magic Affinity)
+    </pre>
+
+    <p><strong>Once implemented:</strong></p>
+
+    <ul style="padding-left: 1.5rem">
+        <li>Rank all characters from highest to lowest score.</li>
+        <li>Display the leaderboard in the terminal.</li>
+        <li>Identify the strongest overall character.</li>
+    </ul><br>
+
+    <h4>Reflection Questions</h4>
+
+    <ul style="padding-left: 1.5rem">
+        <li>Would it have been easy to implement this feature without the Visitor Pattern?</li>
+        <li>How many existing classes needed modification?</li>
+        <li>What benefit was gained by reusing information from existing visitors?</li>
+        <li>Could the ranking algorithm be changed later without altering character classes?</li>
+    </ul>
+
+    </div>
+    </div>
+
+</div>
+
     </section>
 
 </main>
 
 <footer>
-    <p>© 2026 Lesson Hub Template</p>
+    <p>© Python Quickfire Series</p>
 </footer>
-
-script.js
 
 </body>
 </html>
